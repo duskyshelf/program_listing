@@ -1,0 +1,1 @@
+var programListings = angular.module('ProgramListings', []);
