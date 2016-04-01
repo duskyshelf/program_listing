@@ -1,5 +1,12 @@
 <div ng-controller="ProgramListingsController as listCtrl">
 
-  <p>This is a partial {{ listCtrl.hello }} </p>
+  <p>This is a partial</p>
+
+  <ul class="list-group">
+    <li ng-repeat="program in listCtrl.apiCall.results">
+      <img ng-src="{{ program.images.standard }}">
+      <p>{{ program.title }}</p>
+    </li>
+  </ul>
 
 </div>
