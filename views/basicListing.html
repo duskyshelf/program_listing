@@ -1,9 +1,14 @@
 <div ng-controller="ProgramListController as listCtrl">
 
-  <div ng-repeat="letter in listCtrl.letterList">
-    <a href="{{ letter.url }}" class="btn" id="{{ letter.id }}"> {{ letter.icon }} </a>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-1 col-sm-1 col-xs-1" ng-repeat="letter in listCtrl.letterList">
+        <div>
+          <a href="{{ letter.url }}" class="btn-block" id="{{ letter.id }}"> {{ letter.icon }} </a>
+        </div>
+      </div>
+    </div>
   </div>
-
 
   <table>
     <tbody>
