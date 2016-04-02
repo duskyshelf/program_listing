@@ -1,12 +1,12 @@
 <div ng-controller="ProgramListController as listCtrl">
 
-  <p>This is a partial</p>
-
-  <ul class="list-group">
-    <li ng-repeat="program in listCtrl.listing">
-      <img ng-src="{{ listCtrl.parseImageUrl(program.images.standard) }}">
-      <p>{{ program.title }}</p>
-    </li>
-  </ul>
+  <table>
+    <tbody>
+      <tr ng-repeat="program in listCtrl.listing">
+        <td><img ng-src="{{ listCtrl.parseImageUrl(program.images.standard) }}"></td>
+        <td>{{ program.title }}</td>
+      </tr>
+    </tbody>
+  </table>
 
 </div>
