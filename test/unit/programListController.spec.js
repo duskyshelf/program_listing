@@ -1,7 +1,6 @@
 describe('ProgramListController', function() {
 
   beforeEach(module('ProgramList'));
-  // beforeEach(module('my.templates'));
 
   var ctrl;
 
@@ -29,38 +28,42 @@ describe('ProgramListController', function() {
     expect(ctrl.pageCount(data)).toEqual(2)
   })
 
-  // describe('when calling the api', function() {
-  //
-  //     var programs = [
-  //       {
-  //         title: "Abadas",
-  //         images: { standard: "http://ichef.bbci.co.uk/images/ic/192x108/p02c72z7.jpg" }
-  //       },
-  //       {
-  //         title: "a b c",
-  //         images: { standard: "http://ichef.bbci.co.uk/images/ic/192x108/p02g3r3r.jpg" }
-  //       }
-  //     ];
-  //
-  //     beforeEach(inject(function($httpBackend) {
-  //       httpBackend = $httpBackend
-  //       httpBackend
-  //       .expectGET("https://ibl.api.bbci.co.uk/ibl/v1/atoz/a/programmes?page=1")
-  //       .respond(
-  //         { data: { atoz_programmes: { elements: programs }}}
-  //       );
-  //     }));
-  //
-  //
-  //
-  //   it('displays search results', function() {
-  //     ctrl.apiCall("a", "1")
-  //       .then(function(response) {
-  //         expect(ctrl.listing).toEqual(programs);
-  //       })
-  //     httpBackend.flush();
-  //   });
-  //
-  // });
+  describe('when calling the api', function() {
+
+    var programs = [
+      {
+        title: "Abadas",
+        images: { standard: "http://ichef.bbci.co.uk/images/ic/192x108/p02c72z7.jpg" }
+      },
+      {
+        title: "a b c",
+        images: { standard: "http://ichef.bbci.co.uk/images/ic/192x108/p02g3r3r.jpg" }
+      }
+    ];
+
+    beforeEach(inject(function($httpBackend) {
+      httpBackend = $httpBackend
+      httpBackend
+        .when("GET", "views/basicListing.html")
+        .respond("");
+      httpBackend
+        .expectGET("https://ibl.api.bbci.co.uk/ibl/v1/atoz/a/programmes?page=1")
+        .respond(
+          { atoz_programmes: { elements: programs }}
+        );
+    }));
+
+    afterEach(function() {
+      httpBackend.verifyNoOutstandingExpectation();
+      httpBackend.verifyNoOutstandingRequest();
+    });
+
+    it('updates the programs listings correctly', function() {
+      ctrl.apiCall("a", "1");
+      httpBackend.flush();
+      expect(ctrl.programs).toEqual(programs);
+    });
+
+  });
 
 });

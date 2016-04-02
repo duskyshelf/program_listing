@@ -25,6 +25,7 @@ programList.controller('ProgramListController', ['Api', '$routeParams', function
   self.apiCall = function(letter, pageNum) {
     Api.query(letter, pageNum)
       .then(function(response) {
+        console.log(response.data)
         self.data = response.data.atoz_programmes;
         self.programs = response.data.atoz_programmes.elements;
         populatePaginationList(self.data);
@@ -54,6 +55,9 @@ programList.controller('ProgramListController', ['Api', '$routeParams', function
     return url.replace("{recipe}", "192x108");
   };
 
-  // call to populate page
-  self.apiCall(self.letter, self.pageNum);
+  // call to populate page on document ready
+  angular.element(document).ready(function () {
+    self.apiCall(self.letter, self.pageNum)
+  });
+
 }]);
