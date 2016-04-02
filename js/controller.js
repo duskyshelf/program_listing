@@ -1,19 +1,11 @@
-programList.controller('ProgramListController', ['Api', function(Api) {
+programList.controller('ProgramListController', ['Api', '$routeParams', function(Api, $routeParams) {
 
   var self = this;
   self.listing = [];
+  self.letter = $routeParams.letter;
+  self.pageNum = $routeParams.number;
 
-  var programs = [
-    {
-      title: "Abadas",
-      images: { standard: "http://ichef.bbci.co.uk/images/ic/192x108/p02c72z7.jpg" }
-    },
-    {
-      title: "a b c",
-      images: { standard: "http://ichef.bbci.co.uk/images/ic/192x108/p02g3r3r.jpg" }
-    }
-  ];
-
+  self.alphabetArray = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 
   self.apiCall = function(letter, pageNum) {
     Api.query(letter, pageNum)
@@ -24,7 +16,8 @@ programList.controller('ProgramListController', ['Api', function(Api) {
   };
 
   self.parseImageUrl = function(url) {
-    return url.replace("{recipe}", "406x228");
+    // possible sizes 192x108, 406x228, 560x315
+    return url.replace("{recipe}", "192x108");
   }
 
   self.pageCount = function(data) {
@@ -33,5 +26,5 @@ programList.controller('ProgramListController', ['Api', function(Api) {
 
 
 
-  self.apiCall("a", "1");
+  self.apiCall(self.letter, self.pageNum);
 }]);
