@@ -1,0 +1,13 @@
+.program {
+  padding: 10px;
+}
+
+.program-image {
+  max-width: 100%;
+}
+
+.program-title {
+  padding: 20px;
+  max-width: 100%;
+  text-align: center;
+}

@@ -16,7 +16,7 @@ programList.controller('ProgramListController', ['Api', '$routeParams', function
     return {
       icon: letter,
       id: "filter-" + letter,
-      url: "/#/" + letter.toLowerCase() + "/1"
+      uri: "/#/" + letter.toLowerCase() + "/1"
     }
   });
 
@@ -43,7 +43,7 @@ programList.controller('ProgramListController', ['Api', '$routeParams', function
       self.paginationList.push({
         number: i,
         id: "page-" + i,
-        url: "/#/" + $routeParams.letter + "/" + i
+        uri: "/#/" + $routeParams.letter + "/" + i
       })
     };
   };
