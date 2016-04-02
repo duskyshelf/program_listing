@@ -2,7 +2,7 @@
 
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-1 col-sm-1 col-xs-1" ng-repeat="letter in listCtrl.letterList">
+      <div class="col-md-1 col-xs-2" ng-repeat="letter in listCtrl.letterList">
         <div>
           <a href="{{ letter.url }}" class="btn-block" id="{{ letter.id }}"> {{ letter.icon }} </a>
         </div>
@@ -10,9 +10,19 @@
     </div>
   </div>
 
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-1 col-xs-2" ng-repeat="page in listCtrl.paginationList">
+        <div>
+          <a href="{{ page.url }}" class="btn-block" id="{{ page.id }}"> {{ page.number }} </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <table>
     <tbody>
-      <tr ng-repeat="program in listCtrl.listing">
+      <tr ng-repeat="program in listCtrl.programs">
         <td><img ng-src="{{ listCtrl.parseImageUrl(program.images.standard) }}"></td>
         <td>{{ program.title }}</td>
       </tr>
