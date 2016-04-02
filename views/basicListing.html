@@ -12,6 +12,7 @@
 
   <div class="container-fluid">
     <div class="row">
+      <div class="col-md-2 col-xs-2"> Page: </div>
       <div class="col-md-1 col-xs-2" ng-repeat="page in listCtrl.paginationList">
         <div>
           <a href="{{ page.url }}" class="btn-block" id="{{ page.id }}"> {{ page.number }} </a>
