@@ -1,7 +1,7 @@
-programListings.controller('ProgramListingsController', [function() {
+programList.controller('ProgramListController', ['Api', function(Api) {
 
   var self = this;
-  self.hello = "TEST";
+  self.listing = [];
 
   var programs = [
     {
@@ -14,6 +14,19 @@ programListings.controller('ProgramListingsController', [function() {
     }
   ];
 
-  self.apiCall = { results: programs }
+  self.parseImageUrl = function(url) {
+    return url.replace("{recipe}", "406x228")
+  }
+
+  self.apiCall = function(letter, pageNum) {
+    Api.query(letter, pageNum)
+      .then(function(response) {
+        self.listing = response.data.atoz_programmes.elements;
+      })
+  };
+
+  self.apiCall("a", "1");
+
+
 
 }]);

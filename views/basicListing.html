@@ -1,9 +1,9 @@
-<div ng-controller="ProgramListingsController as listCtrl">
+<div ng-controller="ProgramListController as listCtrl">
 
   <p>This is a partial</p>
 
   <ul class="list-group">
-    <li ng-repeat="program in listCtrl.apiCall.results">
+    <li ng-repeat="program in listCtrl.listing">
       <img ng-src="{{ program.images.standard }}">
       <p>{{ program.title }}</p>
     </li>

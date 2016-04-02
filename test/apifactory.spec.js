@@ -2,7 +2,7 @@ describe('factory: Api', function() {
 
   var api;
 
-  beforeEach(module('ProgramListings'));
+  beforeEach(module('ProgramList'));
 
   beforeEach(inject(function(Api) {
     api = Api;
@@ -11,5 +11,7 @@ describe('factory: Api', function() {
   it('responds to query', function() {
     expect(api.query).toBeDefined();
   });
+
+  
 
 });

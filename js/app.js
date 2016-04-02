@@ -1,10 +1,10 @@
-var programListings = angular.module('ProgramListings', ['ngRoute']);
+var programList = angular.module('ProgramList', ['ngRoute']);
 
-programListings.config(['$routeProvider', function($routeProvider) {
+programList.config(['$routeProvider', function($routeProvider) {
   $routeProvider.
   when('/', {
     templateUrl: 'views/basicListing.html',
-    controller: 'ProgramListingsController'
+    controller: 'ProgramListController'
   }).
   otherwise({
     redirectTo: '/'
