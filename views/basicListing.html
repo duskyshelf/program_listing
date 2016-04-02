@@ -4,18 +4,19 @@
     <div class="row">
       <div class="col-md-1 col-xs-2" ng-repeat="letter in listCtrl.letterList">
         <div>
-          <a href="{{ letter.uri }}" class="btn-block" id="{{ letter.id }}"> {{ letter.icon }} </a>
+          <a href="{{ letter.uri }}" class="btn btn-primary btn-block" id="{{ letter.id }}"> {{ letter.icon }} </a>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="container-fluid">
+  <div class="container-fluid pagination">
     <div class="row">
+      <div class="col-md-2 col-xs-2"></div>
       <div class="col-md-2 col-xs-2"> Page: </div>
       <div class="col-md-1 col-xs-2" ng-repeat="page in listCtrl.paginationList">
         <div>
-          <a href="{{ page.uri }}" class="btn-block" id="{{ page.id }}"> {{ page.number }} </a>
+          <a href="{{ page.uri }}" class="btn btn-info btn-block" id="{{ page.id }}"> {{ page.number }} </a>
         </div>
       </div>
     </div>
