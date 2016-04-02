@@ -1,11 +1,21 @@
 programList.controller('ProgramListController', ['Api', '$routeParams', function(Api, $routeParams) {
 
   var self = this;
+  self.letterList = [];
   self.listing = [];
   self.letter = $routeParams.letter;
   self.pageNum = $routeParams.number;
 
-  self.alphabetArray = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
+  var alphabetArray = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+  alphabetArray.push("0-9");
+
+  self.letterList = alphabetArray.map( function(letter) {
+    return {
+      icon: letter,
+      id: "filter-" + letter,
+      url: "/#/" + letter.toLowerCase() + "/1"
+    }
+  });
 
   self.apiCall = function(letter, pageNum) {
     Api.query(letter, pageNum)

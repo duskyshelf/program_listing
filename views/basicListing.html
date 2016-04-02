@@ -1,5 +1,10 @@
 <div ng-controller="ProgramListController as listCtrl">
 
+  <div ng-repeat="letter in listCtrl.letterList">
+    <a href="{{ letter.url }}" class="btn" id="{{ letter.id }}"> {{ letter.icon }} </a>
+  </div>
+
+
   <table>
     <tbody>
       <tr ng-repeat="program in listCtrl.listing">
