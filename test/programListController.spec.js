@@ -16,9 +16,17 @@ describe('ProgramListController', function() {
   it('builds an renderable image url from the return data', function() {
     url = "http://ichef.bbci.co.uk/images/ic/{recipe}/p02c72z7.jpg"
     parsedUrl = "http://ichef.bbci.co.uk/images/ic/406x228/p02c72z7.jpg"
-
     expect(ctrl.parseImageUrl(url)).toEqual(parsedUrl)
+  })
 
+  it('calculates a total of 1 page for 20 items at 20 items per page', function(){
+    var data = { count: 20, per_page: 20 }
+    expect(ctrl.pageCount(data)).toEqual(1)
+  })
+
+  it('calculates a total of 2 pages for 30 items at 20 items per page', function(){
+    var data = { count: 30, per_page: 20 }
+    expect(ctrl.pageCount(data)).toEqual(2)
   })
 
   // describe('when calling the api', function() {

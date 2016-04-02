@@ -2,11 +2,11 @@ var programList = angular.module('ProgramList', ['ngRoute']);
 
 programList.config(['$routeProvider', function($routeProvider) {
   $routeProvider.
-  when('/', {
+  when('/:letter/:number', {
     templateUrl: 'views/basicListing.html',
     controller: 'ProgramListController'
   }).
   otherwise({
-    redirectTo: '/'
+    redirectTo: '/a/1'
   });
 }]);

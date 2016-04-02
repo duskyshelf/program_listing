@@ -4,7 +4,7 @@
 
   <ul class="list-group">
     <li ng-repeat="program in listCtrl.listing">
-      <img ng-src="{{ program.images.standard }}">
+      <img ng-src="{{ listCtrl.parseImageUrl(program.images.standard) }}">
       <p>{{ program.title }}</p>
     </li>
   </ul>
