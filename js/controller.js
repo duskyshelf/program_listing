@@ -20,6 +20,7 @@ programList.controller('ProgramListController', ['Api', '$routeParams', function
     }
   });
 
+
   // call api with relevant parameters
   self.apiCall = function(letter, pageNum) {
     Api.query(letter, pageNum)
@@ -30,16 +31,14 @@ programList.controller('ProgramListController', ['Api', '$routeParams', function
       })
   };
 
-  self.apiCall(self.letter, self.pageNum);
-
 
   // generate pagination link data
-  var pageCount = function(data) {
+  self.pageCount = function(data) {
     return Math.ceil(data.count / 20);
   };
 
   var populatePaginationList = function(data) {
-    for (var i=1; i <= pageCount(data); i++) {
+    for (var i=1; i <= self.pageCount(data); i++) {
       self.paginationList.push({
         number: i,
         id: "page-" + i,
@@ -55,4 +54,6 @@ programList.controller('ProgramListController', ['Api', '$routeParams', function
     return url.replace("{recipe}", "192x108");
   };
 
+  // call to populate page
+  self.apiCall(self.letter, self.pageNum);
 }]);
