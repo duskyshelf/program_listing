@@ -12,7 +12,7 @@ describe('ProgramListController', function() {
     expect(ctrl).toBeDefined();
   });
 
-  it('builds an renderable image url from the return data', function() {
+  it('builds a renderable image url from the return data', function() {
     url = "http://ichef.bbci.co.uk/images/ic/{recipe}/p02c72z7.jpg";
     parsedUrl = "http://ichef.bbci.co.uk/images/ic/192x108/p02c72z7.jpg";
     expect(ctrl.parseImageUrl(url)).toEqual(parsedUrl);
