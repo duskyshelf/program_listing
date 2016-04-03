@@ -29,10 +29,10 @@ button.btn-info {
   color: white;
 }
 
-button.btn-info:hover{
+/*button.btn-info:hover{
     background-color: #065f9e;
     border-color: #065f9e;
-}
+}*/
 
 .program {
   padding: 10px;
