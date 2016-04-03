@@ -1,8 +1,8 @@
 describe('factory: Api', function() {
 
   var api;
-
-  var testData = "test data"
+  var httpBackend;
+  var testData = 'test data';
 
   beforeEach(module('ProgramList'));
 
@@ -11,15 +11,13 @@ describe('factory: Api', function() {
   }));
 
   beforeEach(inject(function($httpBackend) {
-    httpBackend = $httpBackend
+    httpBackend = $httpBackend;
     httpBackend
-      .when("GET", "https://ibl.api.bbci.co.uk/ibl/v1/atoz/a/programmes?page=1")
-      .respond(
-        { info: testData }
-      );
+      .when('GET', "https://ibl.api.bbci.co.uk/ibl/v1/atoz/a/programmes?page=1")
+      .respond({ info: testData });
     httpBackend
-      .when("GET", "views/basicListing.html")
-      .respond("");
+      .when('GET', "views/basicListing.html")
+      .respond('');
   }));
 
   it('responds to query', function() {
@@ -29,13 +27,9 @@ describe('factory: Api', function() {
   it('returns data from the api given parameters', function() {
     api.query('a', '1')
       .then(function(response) {
-        expect(response.data.info).toEqual(testData)
-      })
+        expect(response.data.info).toEqual(testData);
+      });
     httpBackend.flush();
-  })
-
-
-
-
+  });
 
 });

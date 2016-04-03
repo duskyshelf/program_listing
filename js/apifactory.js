@@ -1,7 +1,7 @@
 programList.factory('Api', ['$http', function($http) {
 
   var buildUrl = function(letter, pageNumber) {
-    return "https://ibl.api.bbci.co.uk/ibl/v1/atoz/" + letter + "/programmes?page=" + pageNumber
+    return 'https://ibl.api.bbci.co.uk/ibl/v1/atoz/' + letter + '/programmes?page=' + pageNumber;
   };
 
   return {
@@ -11,6 +11,6 @@ programList.factory('Api', ['$http', function($http) {
         method: 'GET'
       });
     }
-  }
+  };
 
 }]);
