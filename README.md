@@ -33,7 +33,7 @@ Run the following commands from terminal to run the tests
 
 #### Comments about build
 
-Built using Angular as it is my most familiar framework for building something of this size.  
+Built using Angular as it comes with simple list generation, API callbacks and routing, all of which I decided I would need for this application.
 
 This project was test driven using Karma for unit testing and then Protractor for feature testing.  
 
