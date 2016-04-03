@@ -30,7 +30,8 @@ button.btn-info {
 }
 
 button.btn-info:hover{
-    background-color: #05538b;
+    background-color: #065f9e;
+    border-color: #065f9e;
 }
 
 .program {
