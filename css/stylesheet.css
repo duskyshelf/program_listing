@@ -1,9 +1,25 @@
 .topbar {
   margin-left: 20px;
+  background-color: #333333;
+  color: white;
+  padding: 10px;
+  margin: 10px;
 }
 
 .pagination {
   margin-top: 20px;
+}
+
+a .btn-letter {
+  background-color: #bada55;
+  border-color: #333333;
+  margin: 5px;
+  color: white;
+}
+
+a .btn-page {
+  margin: 5px;
+  color: white;
 }
 
 .program {
@@ -18,4 +34,5 @@
   padding: 20px;
   max-width: 100%;
   text-align: center;
+  font-size: large;
 }

@@ -32,4 +32,4 @@ Run the following commands from terminal to run the tests
 
 #### Comments about build
 
-
+I would have liked to have spent more time on styling, especially with regard to responsive design and the narrow view.
