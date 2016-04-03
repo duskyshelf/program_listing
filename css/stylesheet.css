@@ -1,3 +1,7 @@
+body a:hover {
+  text-decoration: none !important;
+}
+
 .topbar {
   margin-left: 20px;
   background-color: #333333;
@@ -10,16 +14,23 @@
   margin-top: 20px;
 }
 
-a .btn-letter {
+button.btn-primary {
   background-color: #bada55;
   border-color: #333333;
+  margin: 5px;
+}
+
+button.btn-primary:hover{
+    background-color: #97ba28;
+}
+
+button.btn-info {
   margin: 5px;
   color: white;
 }
 
-a .btn-page {
-  margin: 5px;
-  color: white;
+button.btn-info:hover{
+    background-color: #05538b;
 }
 
 .program {
@@ -34,5 +45,5 @@ a .btn-page {
   padding: 20px;
   max-width: 100%;
   text-align: center;
-  font-size: large;
+  font-size: 18px;
 }
