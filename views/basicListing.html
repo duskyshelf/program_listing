@@ -12,16 +12,13 @@
     </div>
   </div>
 
-  <div class="container-fluid pagination">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-md-2 col-xs-2"></div>
-      <div class="col-md-3 col-xs-3"> Page: </div>
+      <div class="col-md-1 col-xs-1 page-label"> Page: </div>
       <div class="col-md-1 col-xs-1" ng-repeat="page in listCtrl.paginationList">
-        <div>
-          <a href="{{ page.uri }}">
-            <button class="btn btn-info btn-block" id="{{ page.id }}"> {{ page.number }} </button>
-          </a>
-        </div>
+        <a href="{{ page.uri }}">
+          <button class="btn btn-info btn-block" id="{{ page.id }}"> {{ page.number }} </button>
+        </a>
       </div>
     </div>
   </div>
