@@ -4,6 +4,7 @@
 
 Testing: Karma, Protractor  
 Frameworks: Angular, Bootstrap  
+Build: NPM, Bower
 
 ## How to build
 
@@ -22,7 +23,7 @@ All commands assume you are running this from terminal.
 Run the following commands from terminal to run the tests
 
 ##### Karma (Unit Tests):  
-1. `karma start test/karma.conf.js`
+1. `npm test`
 
 ##### Protractor (Feature Tests):
 (these will require separate terminal windows)  
