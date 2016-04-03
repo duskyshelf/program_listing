@@ -32,4 +32,14 @@ Run the following commands from terminal to run the tests
 
 #### Comments about build
 
-I would have liked to have spent more time on styling, especially with regards to how the page changes responsively. I used a basic bootstrap setup for expediency, but feel the look of the app could be much better.
+Built using Angular as it is my most familiar framework for building something of this size.  
+
+This project was test driven using Karma for unit testing and then Protractor for feature testing.  
+
+Making the filters and pagination dependent on the routing seemed to come about as the simplest solution to the problem.  
+
+As most of the pagination and filtering was provided with the API, there was little functionality strictly needed on the client side.  
+
+Styling was done using HTML/CSS and Bootstrap. I used a basic bootstrap setup for expediency, but I would have liked to have spent more time on styling, especially with regards to how the page changes responsively.
+
+I had some issues getting the api callbacks working within the unit tests, and consequently I feel my api tests are not as robust as I would have liked.
