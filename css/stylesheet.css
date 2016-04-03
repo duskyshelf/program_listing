@@ -20,13 +20,19 @@ button.btn-primary {
   margin: 5px;
 }
 
-button.btn-primary:hover{
+button.btn-primary:hover {
     background-color: #97ba28;
+}
+
+.page-label {
+  padding-top: 10px;
+  text-align: center;
 }
 
 button.btn-info {
   margin: 5px;
   color: white;
+  display: inline-block;
 }
 
 button.btn-info:hover{
