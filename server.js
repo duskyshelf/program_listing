@@ -1,18 +1,19 @@
-var express = require("express");
+var express = require('express');
 var app = express();
 
-app.use(express.static("/"));
+app.set('port', (process.env.PORT || 5000));
+
+app.use(express.static(__dirname));
+app.use('/bower_components', express.static(__dirname + '/bower_components'));
+
+// views is directory for all template files
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
 
 app.get('/', function(request, response) {
-    response.sendFile('./index.html');
+  response.render('index');
 });
 
-app.get('/#/:letter/:page', functon(request, response){
-    response.sendFile('./index.html');
-});
-
-var port = process.env.PORT || 3000;
-
-app.listen(port, function() {
-    console.log("Listening on port 3000");
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });
